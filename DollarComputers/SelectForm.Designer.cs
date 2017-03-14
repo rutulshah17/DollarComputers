@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.SelectFormDataGridView = new System.Windows.Forms.DataGridView();
-            this.DollarComputerHardwareListLabel = new System.Windows.Forms.Label();
             this.IDColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CostColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MFGColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,6 +45,7 @@
             this.HDDColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GPUTypeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.WebCamColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DollarComputerHardwareListLabel = new System.Windows.Forms.Label();
             this.YourSelectionLabel = new System.Windows.Forms.Label();
             this.YourSelectionTextBox = new System.Windows.Forms.TextBox();
             this.CancelButton = new System.Windows.Forms.Button();
@@ -77,17 +77,6 @@
             this.SelectFormDataGridView.Name = "SelectFormDataGridView";
             this.SelectFormDataGridView.Size = new System.Drawing.Size(737, 295);
             this.SelectFormDataGridView.TabIndex = 0;
-            // 
-            // DollarComputerHardwareListLabel
-            // 
-            this.DollarComputerHardwareListLabel.AutoSize = true;
-            this.DollarComputerHardwareListLabel.BackColor = System.Drawing.Color.White;
-            this.DollarComputerHardwareListLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DollarComputerHardwareListLabel.Location = new System.Drawing.Point(12, 13);
-            this.DollarComputerHardwareListLabel.Name = "DollarComputerHardwareListLabel";
-            this.DollarComputerHardwareListLabel.Size = new System.Drawing.Size(219, 16);
-            this.DollarComputerHardwareListLabel.TabIndex = 1;
-            this.DollarComputerHardwareListLabel.Text = "Dollar Computer Hardware List";
             // 
             // IDColumn
             // 
@@ -169,6 +158,17 @@
             this.WebCamColumn.HeaderText = "WebCam";
             this.WebCamColumn.Name = "WebCamColumn";
             // 
+            // DollarComputerHardwareListLabel
+            // 
+            this.DollarComputerHardwareListLabel.AutoSize = true;
+            this.DollarComputerHardwareListLabel.BackColor = System.Drawing.Color.White;
+            this.DollarComputerHardwareListLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DollarComputerHardwareListLabel.Location = new System.Drawing.Point(12, 13);
+            this.DollarComputerHardwareListLabel.Name = "DollarComputerHardwareListLabel";
+            this.DollarComputerHardwareListLabel.Size = new System.Drawing.Size(219, 16);
+            this.DollarComputerHardwareListLabel.TabIndex = 1;
+            this.DollarComputerHardwareListLabel.Text = "Dollar Computer Hardware List";
+            // 
             // YourSelectionLabel
             // 
             this.YourSelectionLabel.AutoSize = true;
@@ -207,6 +207,7 @@
             this.NextButton.TabIndex = 5;
             this.NextButton.Text = "Next";
             this.NextButton.UseVisualStyleBackColor = true;
+            this.NextButton.Click += new System.EventHandler(this.NextButton_Click);
             // 
             // SelectForm
             // 

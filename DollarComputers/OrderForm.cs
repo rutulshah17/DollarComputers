@@ -12,6 +12,7 @@ namespace DollarComputers
 {
     public partial class OrderForm : Form
     {
+        public ProductInfoForm previousForm;
         public OrderForm()
         {
             InitializeComponent();

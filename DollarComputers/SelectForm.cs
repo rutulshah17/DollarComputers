@@ -12,9 +12,18 @@ namespace DollarComputers
 {
     public partial class SelectForm : Form
     {
+        public StartForm previousForm;
         public SelectForm()
         {
             InitializeComponent();
+        }
+
+        private void NextButton_Click(object sender, EventArgs e)
+        {
+            ProductInfoForm productInfoForm = new ProductInfoForm();
+            productInfoForm.PreviousForm = this;
+            productInfoForm.Show();
+            this.Hide();
         }
     }
 }
