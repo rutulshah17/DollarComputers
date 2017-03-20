@@ -36,8 +36,12 @@ namespace DollarComputers
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
-            this.previousForm.Close();
             this.Close();
+        }
+
+        private void StartForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.previousForm.Close();
         }
     }
 }

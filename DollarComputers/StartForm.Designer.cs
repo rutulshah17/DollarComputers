@@ -59,9 +59,9 @@
             // StartNewOrderButton
             // 
             this.StartNewOrderButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StartNewOrderButton.Location = new System.Drawing.Point(159, 325);
+            this.StartNewOrderButton.Location = new System.Drawing.Point(145, 325);
             this.StartNewOrderButton.Name = "StartNewOrderButton";
-            this.StartNewOrderButton.Size = new System.Drawing.Size(149, 23);
+            this.StartNewOrderButton.Size = new System.Drawing.Size(172, 23);
             this.StartNewOrderButton.TabIndex = 2;
             this.StartNewOrderButton.Text = "Start a New Order";
             this.StartNewOrderButton.UseVisualStyleBackColor = true;
@@ -70,9 +70,9 @@
             // OpenSavedOrderButton
             // 
             this.OpenSavedOrderButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OpenSavedOrderButton.Location = new System.Drawing.Point(159, 366);
+            this.OpenSavedOrderButton.Location = new System.Drawing.Point(145, 366);
             this.OpenSavedOrderButton.Name = "OpenSavedOrderButton";
-            this.OpenSavedOrderButton.Size = new System.Drawing.Size(149, 23);
+            this.OpenSavedOrderButton.Size = new System.Drawing.Size(172, 23);
             this.OpenSavedOrderButton.TabIndex = 3;
             this.OpenSavedOrderButton.Text = "Open a Saved Order";
             this.OpenSavedOrderButton.UseVisualStyleBackColor = true;
@@ -81,9 +81,9 @@
             // ExitButton
             // 
             this.ExitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExitButton.Location = new System.Drawing.Point(159, 408);
+            this.ExitButton.Location = new System.Drawing.Point(145, 408);
             this.ExitButton.Name = "ExitButton";
-            this.ExitButton.Size = new System.Drawing.Size(149, 23);
+            this.ExitButton.Size = new System.Drawing.Size(172, 23);
             this.ExitButton.TabIndex = 4;
             this.ExitButton.Text = "Exit";
             this.ExitButton.UseVisualStyleBackColor = true;
@@ -102,6 +102,7 @@
             this.Name = "StartForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Welcome To DOLLAR COMPUTERS";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.StartForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
