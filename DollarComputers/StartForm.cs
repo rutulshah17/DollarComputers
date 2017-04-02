@@ -41,6 +41,7 @@ namespace DollarComputers
             ProductInfoForm productInfoForm = new ProductInfoForm();
             productInfoForm.previousForm = this;
             productInfoForm.Show();
+            productInfoForm.loadData();
             this.Hide();
         }
 

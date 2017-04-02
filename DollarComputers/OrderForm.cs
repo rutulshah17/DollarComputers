@@ -25,7 +25,6 @@ namespace DollarComputers
     {
         public ProductInfoForm previousForm;
 
-        double TotalSalesTax = 0.13;
         public OrderForm()
         {
             InitializeComponent();
@@ -33,40 +32,48 @@ namespace DollarComputers
 
         private void OrderForm_Load(object sender, EventArgs e)
         {
-           
+
             //showing values of the user from the Property class
-            ConditionTextBox.Text = Property.condition;
-            PlatformTextBox.Text = Property.platform;
-            manufacturerTextBox.Text = Property.manufacturer;
-            ModelTextBox.Text = Property.model;
+            ConditionTextBox.Text = UserProduct.condition;
+            PlatformTextBox.Text = UserProduct.platform;
+            if (UserProduct.platform == "Desktop PC")
+            {
+                LaptopDesktopPictureBox.Image = Properties.Resources.desktop;
+            }
+            else
+            {
+                LaptopDesktopPictureBox.Image = Properties.Resources.laptop;
+            }
+            manufacturerTextBox.Text = UserProduct.manufacturer;
+            ModelTextBox.Text = UserProduct.model;
 
-            PriceTextBox.Text = Property.cost.ToString();
+            PriceTextBox.Text = UserProduct.cost.ToString();
 
-            OrderFormListBox.Items.Add(Property.screensize.ToString());
+            OrderFormListBox.Items.Add(UserProduct.screensize.ToString());
             OrderFormListBox.Items.Add("\n");
-            OrderFormListBox.Items.Add(Property.RAM_size.ToString());
+            OrderFormListBox.Items.Add(UserProduct.RAM_size.ToString());
             OrderFormListBox.Items.Add("\n");
-            OrderFormListBox.Items.Add(Property.CPU_brand.ToString());
+            OrderFormListBox.Items.Add(UserProduct.CPU_brand.ToString());
             OrderFormListBox.Items.Add("\n");
-            OrderFormListBox.Items.Add(Property.CPU_type.ToString());
+            OrderFormListBox.Items.Add(UserProduct.CPU_type.ToString());
             OrderFormListBox.Items.Add("\n");
-            OrderFormListBox.Items.Add(Property.CPU_number.ToString());
+            OrderFormListBox.Items.Add(UserProduct.CPU_number.ToString());
             OrderFormListBox.Items.Add("\n");
-            OrderFormListBox.Items.Add(Property.CPU_speed.ToString());
+            OrderFormListBox.Items.Add(UserProduct.CPU_speed.ToString());
             OrderFormListBox.Items.Add("\n");
-            OrderFormListBox.Items.Add(Property.HDD_size.ToString());
+            OrderFormListBox.Items.Add(UserProduct.HDD_size.ToString());
             OrderFormListBox.Items.Add("\n");
-            OrderFormListBox.Items.Add(Property.GPU_Type.ToString());
+            OrderFormListBox.Items.Add(UserProduct.GPU_Type.ToString());
             OrderFormListBox.Items.Add("\n");
-            OrderFormListBox.Items.Add(Property.webcam.ToString());
+            OrderFormListBox.Items.Add(UserProduct.webcam.ToString());
             OrderFormListBox.Items.Add("\n");
-            OrderFormListBox.Items.Add(Property.OS.ToString());
+            OrderFormListBox.Items.Add(UserProduct.OS.ToString());
 
-            
-            
-            SalesTaxTextBox.Text = (Convert.ToDouble(PriceTextBox.Text) * TotalSalesTax).ToString();
 
-            TotalTextBox.Text = PriceTextBox.Text + SalesTaxTextBox.Text;
+
+            SalesTaxTextBox.Text = (Convert.ToDouble(PriceTextBox.Text) * 0.13).ToString();
+
+            TotalTextBox.Text = (Convert.ToDouble(PriceTextBox.Text) * 1.13).ToString();
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -79,7 +86,28 @@ namespace DollarComputers
         private void printToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //show print message on click
-            MessageBox.Show("Your order is sent for print","Print !",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            MessageBox.Show("Your order is sent for print", "Print !", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void FinishButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Thank you for choosing Dollar Computers", " ", MessageBoxButtons.OK, MessageBoxIcon.None);
+        }
+
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void BackButton_Click(object sender, EventArgs e)
+        {
+            this.previousForm.Show();
+            this.Hide();
+        }
+
+        private void OrderForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.previousForm.Close();
         }
     }
 }

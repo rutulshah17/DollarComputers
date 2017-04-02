@@ -22,7 +22,7 @@ namespace DollarComputers
 {
     public partial class SelectForm : Form
     {
-        public StartForm previousForm;
+        public Form previousForm;
 
         ProductContext productDB = new ProductContext();
         public SelectForm()
@@ -34,7 +34,7 @@ namespace DollarComputers
         private void NextButton_Click(object sender, EventArgs e)
         {
             ProductInfoForm productInfoForm = new ProductInfoForm();
-            productInfoForm.PreviousForm = this;
+            productInfoForm.previousForm = this;
             productInfoForm.Show();
             this.Hide();
         }
@@ -42,18 +42,18 @@ namespace DollarComputers
         private void SelectForm_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the '_comp1004_w2017DataSet.products' table. You can move, or remove it, as needed.
-            this.productsTableAdapter.Fill(this._comp1004_w2017DataSet.products);
+            //this.productsTableAdapter.Fill(this._comp1004_w2017DataSet.products);
 
             try
             {
                 //serching for the list of products in database
                 var productList = (from products in productDB.products
-                               select products).ToList();
+                                   select products).ToList();
 
                 //storing the list in datasource
                 SelectFormDataGridView.DataSource = productList;
             }
-            catch(Exception exception)
+            catch (Exception exception)
             {
                 //showing error if any
                 Debug.WriteLine(exception.Message);
@@ -64,10 +64,11 @@ namespace DollarComputers
         {
             //getting current index of the selected row
             int rowindex = SelectFormDataGridView.CurrentRow.Index;
+            Debug.WriteLine(rowindex);
 
             //getting id of the selected cell
             short currentId = (short)SelectFormDataGridView.Rows[rowindex].Cells[0].Value;
-            
+            SelectFormDataGridView.Rows[rowindex].Selected = true;
             try
             {
                 //getting the desired product from the database
@@ -77,14 +78,39 @@ namespace DollarComputers
 
                 //showing it to user
                 YourSelectionTextBox.Text = SelectedProduct.model + " " + SelectedProduct.manufacturer + " Priced at : " + "$" + SelectedProduct.cost;
-            
-                Property.productID = SelectedProduct.productID;
+                UserProduct.productID = SelectedProduct.productID;
+                UserProduct.condition = SelectedProduct.condition;
+                UserProduct.cost = SelectedProduct.cost;
+                UserProduct.platform = SelectedProduct.platform;
+                UserProduct.OS = SelectedProduct.OS;
+                UserProduct.manufacturer = SelectedProduct.manufacturer;
+                UserProduct.model = SelectedProduct.model;
+                UserProduct.RAM_size = SelectedProduct.RAM_size;
+                UserProduct.screensize = SelectedProduct.screensize;
+                UserProduct.HDD_size = SelectedProduct.HDD_size;
+                UserProduct.CPU_brand = SelectedProduct.CPU_brand;
+                UserProduct.CPU_number = SelectedProduct.CPU_number;
+                UserProduct.GPU_Type = SelectedProduct.GPU_Type;
+                UserProduct.CPU_type = SelectedProduct.CPU_type;
+                UserProduct.CPU_speed = SelectedProduct.CPU_speed;
+                UserProduct.webcam = SelectedProduct.webcam;
+                NextButton.Enabled = true;
             }
             catch (Exception exception)
-                {
-                    //throw exception if any
-                    Debug.WriteLine(exception.Message);
-                }
+            {
+                //throw exception if any
+                Debug.WriteLine(exception.Message);
             }
+        }
+
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void SelectForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.previousForm.Close();
+        }
     }
 }

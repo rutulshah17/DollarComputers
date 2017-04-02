@@ -99,6 +99,7 @@
             this.Controls.Add(this.StartNewOrderButton);
             this.Controls.Add(this.MainStartFormlabel);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StartForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Welcome To DOLLAR COMPUTERS";

@@ -13,6 +13,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,10 +23,9 @@ namespace DollarComputers
 {
     public partial class ProductInfoForm : Form
     {
-        public StartForm previousForm;
-
-        //creating an instance of the product database
-        ProductContext productDB = new ProductContext();
+        public Form previousForm;
+        private StreamWriter _writer;
+        private StreamReader _reader;
 
         public SelectForm PreviousForm;
         public ProductInfoForm()
@@ -42,31 +42,27 @@ namespace DollarComputers
             this.Hide();
         }
 
-        
+
         private void ProductInfoForm_Load(object sender, EventArgs e)
         {
-            //quering database on loading product form
-            var selectedProduct = (from product in productDB.products
-                                       where product.productID == Property.productID
-                                       select product).FirstOrDefault();
-
             //showing values to the user 
-            ProductIdTextBox.Text = selectedProduct.productID.ToString();
-            ConditionTextBox.Text = selectedProduct.condition;
-            CostTextBox.Text = "$"+selectedProduct.cost.ToString();
+            ProductIdTextBox.Text = UserProduct.productID.ToString();
+            ConditionTextBox.Text = UserProduct.condition;
+            CostTextBox.Text = UserProduct.cost.ToString();
 
 
             List<String> productInfoList = new List<string>();
 
             //adding value to list
-            productInfoList.Add(selectedProduct.model);
-            productInfoList.Add(selectedProduct.OS);
-            productInfoList.Add(selectedProduct.manufacturer);
-            productInfoList.Add(selectedProduct.platform);
+            productInfoList.Add(UserProduct.model);
+            productInfoList.Add(UserProduct.OS);
+            productInfoList.Add(UserProduct.manufacturer);
+            productInfoList.Add(UserProduct.platform);
 
-            int count = 0; 
+            int count = 0;
             //will show user remaining values
-            foreach(var textBox in ProductInfoGroupBox.Controls.OfType<TextBox>()) {
+            foreach (var textBox in ProductInfoGroupBox.Controls.OfType<TextBox>())
+            {
                 textBox.Text = productInfoList[count];
                 count++;
             }
@@ -75,42 +71,153 @@ namespace DollarComputers
             List<String> techSpecs = new List<string>();
 
             //adding techspecs values
-            techSpecs.Add(selectedProduct.webcam);
-            techSpecs.Add(selectedProduct.GPU_Type);
-            techSpecs.Add(selectedProduct.HDD_size);
-            techSpecs.Add(selectedProduct.CPU_speed);
-            techSpecs.Add(selectedProduct.CPU_type);
-            techSpecs.Add(selectedProduct.CPU_number);
-            techSpecs.Add(selectedProduct.screensize);
-            techSpecs.Add(selectedProduct.CPU_brand);
-            techSpecs.Add(selectedProduct.RAM_size);
+            techSpecs.Add(UserProduct.webcam);
+            techSpecs.Add(UserProduct.GPU_Type);
+            techSpecs.Add(UserProduct.HDD_size);
+            techSpecs.Add(UserProduct.CPU_speed);
+            techSpecs.Add(UserProduct.CPU_type);
+            techSpecs.Add(UserProduct.CPU_number);
+            techSpecs.Add(UserProduct.screensize);
+            techSpecs.Add(UserProduct.CPU_brand);
+            techSpecs.Add(UserProduct.RAM_size);
 
             int flag = 0;
-            foreach (var textBox in TechSpecsGroupBox.Controls.OfType<TextBox>()) {
+            foreach (var textBox in TechSpecsGroupBox.Controls.OfType<TextBox>())
+            {
                 textBox.Text = techSpecs[flag];
                 flag++;
             }
+        }
 
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            loadData();
+        }
 
-            //storing all the values of the selected product in property class so that we can access it on next page
-            Property.productID = selectedProduct.productID;
-            Property.condition = selectedProduct.condition;
-            Property.cost = selectedProduct.cost;
-            Property.platform = selectedProduct.platform;
-            Property.manufacturer = selectedProduct.manufacturer;
-            Property.OS = selectedProduct.OS;
-            Property.model = selectedProduct.model;
-            Property.RAM_size = selectedProduct.RAM_size;
-            Property.CPU_brand = selectedProduct.CPU_brand;
-            Property.CPU_type = selectedProduct.CPU_type;
-            Property.screensize = selectedProduct.screensize;
-            Property.CPU_number = selectedProduct.CPU_number;
-            Property.CPU_speed = selectedProduct.CPU_speed;
-            Property.HDD_size = selectedProduct.HDD_size;
-            Property.GPU_Type = selectedProduct.GPU_Type;
-            Property.webcam = selectedProduct.webcam;
+        public void loadData()
+        {
+            string filename;
+            OpenProductFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
+            OpenProductFileDialog.InitialDirectory = Directory.GetCurrentDirectory();
+            OpenProductFileDialog.FileName = "Product.txt";
+            if (OpenProductFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                filename = OpenProductFileDialog.FileName;
+                try
+                {
+                    this._reader = new StreamReader(filename);
 
+                    if (this._reader.Peek() != -1)
+                    {
+                        ProductIdTextBox.Text = this._reader.ReadLine();
+                        ConditionTextBox.Text = this._reader.ReadLine();
+                        CostTextBox.Text = this._reader.ReadLine();
+                        PlatformTextBox.Text = this._reader.ReadLine();
+                        OSTextBox.Text = this._reader.ReadLine();
+                        ManufacturerTextBox.Text = this._reader.ReadLine();
+                        ModelTextBox.Text = this._reader.ReadLine();
+                        MemoryTextBox.Text = this._reader.ReadLine();
+                        LCDSizeTextBox.Text = this._reader.ReadLine();
+                        HDDTextBox.Text = this._reader.ReadLine();
+                        CPUBrandTextBox.Text = this._reader.ReadLine();
+                        CPUNumberTextBox.Text = this._reader.ReadLine();
+                        GPUTypeTextBox.Text = this._reader.ReadLine();
+                        CPUTypeTextBox.Text = this._reader.ReadLine();
+                        CPUSpeedTextBox.Text = this._reader.ReadLine();
+                        WebCamTextBox.Text = this._reader.ReadLine();
+                        UserProduct.productID = short.Parse(ProductIdTextBox.Text);
+                        UserProduct.condition = ConditionTextBox.Text;
+                        UserProduct.cost = Convert.ToDecimal(CostTextBox.Text);
+                        UserProduct.platform = PlatformTextBox.Text;
+                        UserProduct.OS = OSTextBox.Text;
+                        UserProduct.manufacturer = ManufacturerTextBox.Text;
+                        UserProduct.model = ModelTextBox.Text;
+                        UserProduct.RAM_size = MemoryTextBox.Text;
+                        UserProduct.screensize = LCDSizeTextBox.Text;
+                        UserProduct.HDD_size = HDDTextBox.Text;
+                        UserProduct.CPU_brand = CPUBrandTextBox.Text;
+                        UserProduct.CPU_number = CPUNumberTextBox.Text;
+                        UserProduct.GPU_Type = GPUTypeTextBox.Text;
+                        UserProduct.CPU_type = CPUTypeTextBox.Text;
+                        UserProduct.CPU_speed = CPUSpeedTextBox.Text;
+                        UserProduct.webcam = WebCamTextBox.Text;
+                    }
+                    else
+                    {
+                        MessageBox.Show("File Empty - No data to Read", "Error Reading File", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
 
+                    this._reader.Close();
+                }
+                catch (Exception exception)
+                {
+                    Debug.WriteLine(exception.ToString());
+                    Debug.WriteLine(exception.Message);
+                    MessageBox.Show("Error Reading File", "File Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string filename;
+            SaveProductFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
+            SaveProductFileDialog.FileName = "Product.txt";
+            SaveProductFileDialog.InitialDirectory = Directory.GetCurrentDirectory();
+            if (SaveProductFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                filename = SaveProductFileDialog.FileName;
+                try
+                {
+                    this._writer = new StreamWriter(filename);
+                    this._writer.WriteLine(ProductIdTextBox.Text);
+                    this._writer.WriteLine(ConditionTextBox.Text);
+                    this._writer.WriteLine(CostTextBox.Text);
+                    this._writer.WriteLine(PlatformTextBox.Text);
+                    this._writer.WriteLine(OSTextBox.Text);
+                    this._writer.WriteLine(ManufacturerTextBox.Text);
+                    this._writer.WriteLine(ModelTextBox.Text);
+                    this._writer.WriteLine(MemoryTextBox.Text);
+                    this._writer.WriteLine(LCDSizeTextBox.Text);
+                    this._writer.WriteLine(HDDTextBox.Text);
+                    this._writer.WriteLine(CPUBrandTextBox.Text);
+                    this._writer.WriteLine(CPUNumberTextBox.Text);
+                    this._writer.WriteLine(GPUTypeTextBox.Text);
+                    this._writer.WriteLine(CPUTypeTextBox.Text);
+                    this._writer.WriteLine(CPUSpeedTextBox.Text);
+                    this._writer.WriteLine(WebCamTextBox.Text);
+                    this._writer.Close();
+                    MessageBox.Show("File Written Successfully", "File Status",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception exception)
+                {
+                    Debug.WriteLine(exception.Message);
+                    MessageBox.Show("Error  Writing File", "File Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void SelectAnotherProductButton_Click(object sender, EventArgs e)
+        {
+            this.previousForm.Show();
+            this.Hide();
+        }
+
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void ProductInfoForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.previousForm.Close();
         }
     }
 }
