@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrderForm));
             this.SystemComponentsGroupBox = new System.Windows.Forms.GroupBox();
             this.OrderFormSplitContainer = new System.Windows.Forms.SplitContainer();
             this.ConditionTextBox = new System.Windows.Forms.TextBox();
@@ -126,6 +127,7 @@
             // 
             // ConditionTextBox
             // 
+            this.ConditionTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ConditionTextBox.Location = new System.Drawing.Point(109, 24);
             this.ConditionTextBox.Name = "ConditionTextBox";
             this.ConditionTextBox.Size = new System.Drawing.Size(100, 22);
@@ -133,6 +135,7 @@
             // 
             // ModelTextBox
             // 
+            this.ModelTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ModelTextBox.Location = new System.Drawing.Point(339, 91);
             this.ModelTextBox.Name = "ModelTextBox";
             this.ModelTextBox.Size = new System.Drawing.Size(100, 22);
@@ -142,7 +145,7 @@
             // 
             this.ConditionLabel.AutoSize = true;
             this.ConditionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ConditionLabel.Location = new System.Drawing.Point(28, 30);
+            this.ConditionLabel.Location = new System.Drawing.Point(28, 27);
             this.ConditionLabel.Name = "ConditionLabel";
             this.ConditionLabel.Size = new System.Drawing.Size(73, 16);
             this.ConditionLabel.TabIndex = 0;
@@ -150,6 +153,7 @@
             // 
             // PlatformTextBox
             // 
+            this.PlatformTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PlatformTextBox.Location = new System.Drawing.Point(339, 24);
             this.PlatformTextBox.Name = "PlatformTextBox";
             this.PlatformTextBox.Size = new System.Drawing.Size(100, 22);
@@ -159,7 +163,7 @@
             // 
             this.ManufacturerLabel.AutoSize = true;
             this.ManufacturerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ManufacturerLabel.Location = new System.Drawing.Point(7, 97);
+            this.ManufacturerLabel.Location = new System.Drawing.Point(7, 94);
             this.ManufacturerLabel.Name = "ManufacturerLabel";
             this.ManufacturerLabel.Size = new System.Drawing.Size(97, 16);
             this.ManufacturerLabel.TabIndex = 1;
@@ -167,6 +171,7 @@
             // 
             // manufacturerTextBox
             // 
+            this.manufacturerTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.manufacturerTextBox.Location = new System.Drawing.Point(109, 91);
             this.manufacturerTextBox.Name = "manufacturerTextBox";
             this.manufacturerTextBox.Size = new System.Drawing.Size(100, 22);
@@ -176,7 +181,7 @@
             // 
             this.PlatformLabel.AutoSize = true;
             this.PlatformLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PlatformLabel.Location = new System.Drawing.Point(276, 30);
+            this.PlatformLabel.Location = new System.Drawing.Point(276, 27);
             this.PlatformLabel.Name = "PlatformLabel";
             this.PlatformLabel.Size = new System.Drawing.Size(65, 16);
             this.PlatformLabel.TabIndex = 2;
@@ -186,7 +191,7 @@
             // 
             this.ModelLabel.AutoSize = true;
             this.ModelLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ModelLabel.Location = new System.Drawing.Point(287, 97);
+            this.ModelLabel.Location = new System.Drawing.Point(287, 94);
             this.ModelLabel.Name = "ModelLabel";
             this.ModelLabel.Size = new System.Drawing.Size(51, 16);
             this.ModelLabel.TabIndex = 3;
@@ -224,6 +229,7 @@
             // 
             // OrderFormListBox
             // 
+            this.OrderFormListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OrderFormListBox.FormattingEnabled = true;
             this.OrderFormListBox.ItemHeight = 16;
             this.OrderFormListBox.Location = new System.Drawing.Point(110, 23);
@@ -327,14 +333,15 @@
             // 
             this.printToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.printToolStripMenuItem.Text = "Print";
+            this.printToolStripMenuItem.Click += new System.EventHandler(this.printToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // editToolStripMenuItem
@@ -368,12 +375,15 @@
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
             this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(492, 63);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(166, 129);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
@@ -405,6 +415,7 @@
             // 
             // TotalTextBox
             // 
+            this.TotalTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TotalTextBox.Location = new System.Drawing.Point(197, 129);
             this.TotalTextBox.Name = "TotalTextBox";
             this.TotalTextBox.Size = new System.Drawing.Size(100, 22);
@@ -412,6 +423,7 @@
             // 
             // SalesTaxTextBox
             // 
+            this.SalesTaxTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SalesTaxTextBox.Location = new System.Drawing.Point(197, 60);
             this.SalesTaxTextBox.Name = "SalesTaxTextBox";
             this.SalesTaxTextBox.Size = new System.Drawing.Size(100, 22);
@@ -419,6 +431,7 @@
             // 
             // PriceTextBox
             // 
+            this.PriceTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PriceTextBox.Location = new System.Drawing.Point(197, 24);
             this.PriceTextBox.Name = "PriceTextBox";
             this.PriceTextBox.Size = new System.Drawing.Size(100, 22);
@@ -500,6 +513,7 @@
             this.Name = "OrderForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Complete Your Order";
+            this.Load += new System.EventHandler(this.OrderForm_Load);
             this.SystemComponentsGroupBox.ResumeLayout(false);
             this.OrderFormSplitContainer.Panel1.ResumeLayout(false);
             this.OrderFormSplitContainer.Panel1.PerformLayout();

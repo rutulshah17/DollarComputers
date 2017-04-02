@@ -166,7 +166,7 @@
             // 
             // ProductIdTextBox
             // 
-            this.ProductIdTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProductIdTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProductIdTextBox.Location = new System.Drawing.Point(121, 53);
             this.ProductIdTextBox.Name = "ProductIdTextBox";
             this.ProductIdTextBox.ReadOnly = true;
@@ -175,7 +175,7 @@
             // 
             // ConditionTextBox
             // 
-            this.ConditionTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConditionTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ConditionTextBox.Location = new System.Drawing.Point(362, 50);
             this.ConditionTextBox.Name = "ConditionTextBox";
             this.ConditionTextBox.ReadOnly = true;
@@ -184,7 +184,7 @@
             // 
             // CostTextBox
             // 
-            this.CostTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CostTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CostTextBox.Location = new System.Drawing.Point(578, 50);
             this.CostTextBox.Name = "CostTextBox";
             this.CostTextBox.ReadOnly = true;
@@ -211,7 +211,7 @@
             // 
             // ModelTextBox
             // 
-            this.ModelTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ModelTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ModelTextBox.Location = new System.Drawing.Point(350, 76);
             this.ModelTextBox.Name = "ModelTextBox";
             this.ModelTextBox.ReadOnly = true;
@@ -220,7 +220,7 @@
             // 
             // OSTextBox
             // 
-            this.OSTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OSTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OSTextBox.Location = new System.Drawing.Point(350, 32);
             this.OSTextBox.Name = "OSTextBox";
             this.OSTextBox.ReadOnly = true;
@@ -249,7 +249,7 @@
             // 
             // ManufacturerTextBox
             // 
-            this.ManufacturerTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ManufacturerTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ManufacturerTextBox.Location = new System.Drawing.Point(109, 79);
             this.ManufacturerTextBox.Name = "ManufacturerTextBox";
             this.ManufacturerTextBox.ReadOnly = true;
@@ -258,7 +258,7 @@
             // 
             // PlatformTextBox
             // 
-            this.PlatformTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PlatformTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PlatformTextBox.Location = new System.Drawing.Point(109, 29);
             this.PlatformTextBox.Name = "PlatformTextBox";
             this.PlatformTextBox.ReadOnly = true;
@@ -315,18 +315,18 @@
             // 
             // WebCamTextBox
             // 
-            this.WebCamTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WebCamTextBox.Location = new System.Drawing.Point(566, 114);
+            this.WebCamTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WebCamTextBox.Location = new System.Drawing.Point(546, 114);
             this.WebCamTextBox.Name = "WebCamTextBox";
             this.WebCamTextBox.ReadOnly = true;
-            this.WebCamTextBox.Size = new System.Drawing.Size(100, 22);
+            this.WebCamTextBox.Size = new System.Drawing.Size(150, 22);
             this.WebCamTextBox.TabIndex = 16;
             // 
             // WebCamLabel
             // 
             this.WebCamLabel.AutoSize = true;
             this.WebCamLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WebCamLabel.Location = new System.Drawing.Point(489, 120);
+            this.WebCamLabel.Location = new System.Drawing.Point(469, 120);
             this.WebCamLabel.Name = "WebCamLabel";
             this.WebCamLabel.Size = new System.Drawing.Size(71, 16);
             this.WebCamLabel.TabIndex = 22;
@@ -334,27 +334,27 @@
             // 
             // GPUTypeTextBox
             // 
-            this.GPUTypeTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GPUTypeTextBox.Location = new System.Drawing.Point(566, 79);
+            this.GPUTypeTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GPUTypeTextBox.Location = new System.Drawing.Point(546, 79);
             this.GPUTypeTextBox.Name = "GPUTypeTextBox";
             this.GPUTypeTextBox.ReadOnly = true;
-            this.GPUTypeTextBox.Size = new System.Drawing.Size(100, 22);
+            this.GPUTypeTextBox.Size = new System.Drawing.Size(150, 22);
             this.GPUTypeTextBox.TabIndex = 13;
             // 
             // HDDTextBox
             // 
-            this.HDDTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HDDTextBox.Location = new System.Drawing.Point(566, 39);
+            this.HDDTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HDDTextBox.Location = new System.Drawing.Point(546, 39);
             this.HDDTextBox.Name = "HDDTextBox";
             this.HDDTextBox.ReadOnly = true;
-            this.HDDTextBox.Size = new System.Drawing.Size(100, 22);
+            this.HDDTextBox.Size = new System.Drawing.Size(150, 22);
             this.HDDTextBox.TabIndex = 10;
             // 
             // GPUTypeLabel
             // 
             this.GPUTypeLabel.AutoSize = true;
             this.GPUTypeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GPUTypeLabel.Location = new System.Drawing.Point(482, 85);
+            this.GPUTypeLabel.Location = new System.Drawing.Point(462, 85);
             this.GPUTypeLabel.Name = "GPUTypeLabel";
             this.GPUTypeLabel.Size = new System.Drawing.Size(80, 16);
             this.GPUTypeLabel.TabIndex = 19;
@@ -364,7 +364,7 @@
             // 
             this.HDDLabel.AutoSize = true;
             this.HDDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HDDLabel.Location = new System.Drawing.Point(516, 45);
+            this.HDDLabel.Location = new System.Drawing.Point(496, 45);
             this.HDDLabel.Name = "HDDLabel";
             this.HDDLabel.Size = new System.Drawing.Size(41, 16);
             this.HDDLabel.TabIndex = 18;
@@ -372,18 +372,18 @@
             // 
             // CPUSpeedTextBox
             // 
-            this.CPUSpeedTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CPUSpeedTextBox.Location = new System.Drawing.Point(350, 115);
+            this.CPUSpeedTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CPUSpeedTextBox.Location = new System.Drawing.Point(338, 115);
             this.CPUSpeedTextBox.Name = "CPUSpeedTextBox";
             this.CPUSpeedTextBox.ReadOnly = true;
-            this.CPUSpeedTextBox.Size = new System.Drawing.Size(100, 22);
+            this.CPUSpeedTextBox.Size = new System.Drawing.Size(112, 22);
             this.CPUSpeedTextBox.TabIndex = 15;
             // 
             // CPUSpeedLabel
             // 
             this.CPUSpeedLabel.AutoSize = true;
             this.CPUSpeedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CPUSpeedLabel.Location = new System.Drawing.Point(255, 120);
+            this.CPUSpeedLabel.Location = new System.Drawing.Point(243, 120);
             this.CPUSpeedLabel.Name = "CPUSpeedLabel";
             this.CPUSpeedLabel.Size = new System.Drawing.Size(89, 16);
             this.CPUSpeedLabel.TabIndex = 16;
@@ -391,11 +391,11 @@
             // 
             // CPUTypeTextBox
             // 
-            this.CPUTypeTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CPUTypeTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CPUTypeTextBox.Location = new System.Drawing.Point(109, 114);
             this.CPUTypeTextBox.Name = "CPUTypeTextBox";
             this.CPUTypeTextBox.ReadOnly = true;
-            this.CPUTypeTextBox.Size = new System.Drawing.Size(100, 22);
+            this.CPUTypeTextBox.Size = new System.Drawing.Size(110, 22);
             this.CPUTypeTextBox.TabIndex = 14;
             // 
             // CPUTypeLabel
@@ -410,27 +410,27 @@
             // 
             // CPUNumberTextBox
             // 
-            this.CPUNumberTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CPUNumberTextBox.Location = new System.Drawing.Point(350, 76);
+            this.CPUNumberTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CPUNumberTextBox.Location = new System.Drawing.Point(338, 76);
             this.CPUNumberTextBox.Name = "CPUNumberTextBox";
             this.CPUNumberTextBox.ReadOnly = true;
-            this.CPUNumberTextBox.Size = new System.Drawing.Size(100, 22);
+            this.CPUNumberTextBox.Size = new System.Drawing.Size(112, 22);
             this.CPUNumberTextBox.TabIndex = 12;
             // 
             // LCDSizeTextBox
             // 
-            this.LCDSizeTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LCDSizeTextBox.Location = new System.Drawing.Point(350, 36);
+            this.LCDSizeTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LCDSizeTextBox.Location = new System.Drawing.Point(338, 36);
             this.LCDSizeTextBox.Name = "LCDSizeTextBox";
             this.LCDSizeTextBox.ReadOnly = true;
-            this.LCDSizeTextBox.Size = new System.Drawing.Size(100, 22);
+            this.LCDSizeTextBox.Size = new System.Drawing.Size(112, 22);
             this.LCDSizeTextBox.TabIndex = 9;
             // 
             // CPUNumberLabel
             // 
             this.CPUNumberLabel.AutoSize = true;
             this.CPUNumberLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CPUNumberLabel.Location = new System.Drawing.Point(248, 82);
+            this.CPUNumberLabel.Location = new System.Drawing.Point(236, 82);
             this.CPUNumberLabel.Name = "CPUNumberLabel";
             this.CPUNumberLabel.Size = new System.Drawing.Size(97, 16);
             this.CPUNumberLabel.TabIndex = 11;
@@ -440,7 +440,7 @@
             // 
             this.LCDSizeLabel.AutoSize = true;
             this.LCDSizeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LCDSizeLabel.Location = new System.Drawing.Point(273, 42);
+            this.LCDSizeLabel.Location = new System.Drawing.Point(261, 42);
             this.LCDSizeLabel.Name = "LCDSizeLabel";
             this.LCDSizeLabel.Size = new System.Drawing.Size(71, 16);
             this.LCDSizeLabel.TabIndex = 10;
@@ -448,20 +448,20 @@
             // 
             // CPUBrandTextBox
             // 
-            this.CPUBrandTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CPUBrandTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CPUBrandTextBox.Location = new System.Drawing.Point(109, 75);
             this.CPUBrandTextBox.Name = "CPUBrandTextBox";
             this.CPUBrandTextBox.ReadOnly = true;
-            this.CPUBrandTextBox.Size = new System.Drawing.Size(100, 22);
+            this.CPUBrandTextBox.Size = new System.Drawing.Size(110, 22);
             this.CPUBrandTextBox.TabIndex = 11;
             // 
             // MemoryTextBox
             // 
-            this.MemoryTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MemoryTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MemoryTextBox.Location = new System.Drawing.Point(109, 35);
             this.MemoryTextBox.Name = "MemoryTextBox";
             this.MemoryTextBox.ReadOnly = true;
-            this.MemoryTextBox.Size = new System.Drawing.Size(100, 22);
+            this.MemoryTextBox.Size = new System.Drawing.Size(110, 22);
             this.MemoryTextBox.TabIndex = 8;
             // 
             // CPUBrandLabel

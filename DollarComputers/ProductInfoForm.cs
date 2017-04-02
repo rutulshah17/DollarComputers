@@ -34,12 +34,13 @@ namespace DollarComputers
         private void ProductInfoForm_Load(object sender, EventArgs e)
         {
             var selectedProduct = (from product in productDB.products
-                                       where product.productID == Property.productId
+                                       where product.productID == Property.productID
                                        select product).FirstOrDefault();
 
             ProductIdTextBox.Text = selectedProduct.productID.ToString();
             ConditionTextBox.Text = selectedProduct.condition;
             CostTextBox.Text = "$"+selectedProduct.cost.ToString();
+
 
             List<String> productInfoList = new List<string>();
 
@@ -72,6 +73,24 @@ namespace DollarComputers
                 textBox.Text = techSpecs[flag];
                 flag++;
             }
+
+
+            Property.productID = selectedProduct.productID;
+            Property.condition = selectedProduct.condition;
+            Property.cost = selectedProduct.cost;
+            Property.platform = selectedProduct.platform;
+            Property.manufacturer = selectedProduct.manufacturer;
+            Property.OS = selectedProduct.OS;
+            Property.model = selectedProduct.model;
+            Property.RAM_size = selectedProduct.RAM_size;
+            Property.CPU_brand = selectedProduct.CPU_brand;
+            Property.CPU_type = selectedProduct.CPU_type;
+            Property.screensize = selectedProduct.screensize;
+            Property.CPU_number = selectedProduct.CPU_number;
+            Property.CPU_speed = selectedProduct.CPU_speed;
+            Property.HDD_size = selectedProduct.HDD_size;
+            Property.GPU_Type = selectedProduct.GPU_Type;
+            Property.webcam = selectedProduct.webcam;
 
 
         }

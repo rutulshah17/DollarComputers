@@ -1,4 +1,5 @@
-﻿using DollarComputers.Models;
+﻿
+using DollarComputers.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -61,7 +62,7 @@ namespace DollarComputers
 
                 YourSelectionTextBox.Text = SelectedProduct.model + " " + SelectedProduct.manufacturer + " Priced at : " + "$" + SelectedProduct.cost;
             
-                Property.productId = SelectedProduct.productID;
+                Property.productID = SelectedProduct.productID;
             }
             catch (Exception exception)
                 {
