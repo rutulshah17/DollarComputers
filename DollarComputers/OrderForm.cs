@@ -1,4 +1,13 @@
-﻿using DollarComputers.Models;
+﻿/*
+Application Name        : Dollar Computers
+Author's Name           : Rutul Shah
+Student ID              : 200329341 
+Application Description : This application lets user to select from a 
+                          wide range of computers and laptops along with hardware components. 
+                          Open box laptops and computers are also available.
+*/
+
+using DollarComputers.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,6 +34,7 @@ namespace DollarComputers
         private void OrderForm_Load(object sender, EventArgs e)
         {
            
+            //showing values of the user from the Property class
             ConditionTextBox.Text = Property.condition;
             PlatformTextBox.Text = Property.platform;
             manufacturerTextBox.Text = Property.manufacturer;
@@ -61,12 +71,14 @@ namespace DollarComputers
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //Show about box on click
             AboutBox aboutForm = new AboutBox();
             aboutForm.ShowDialog();
         }
 
         private void printToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //show print message on click
             MessageBox.Show("Your order is sent for print","Print !",MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
     }

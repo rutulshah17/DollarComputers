@@ -1,4 +1,12 @@
-﻿using DollarComputers.Models;
+﻿/*
+Application Name        : Dollar Computers
+Author's Name           : Rutul Shah
+Student ID              : 200329341 
+Application Description : This application lets user to select from a 
+                          wide range of computers and laptops along with hardware components. 
+                          Open box laptops and computers are also available.
+*/
+using DollarComputers.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +23,8 @@ namespace DollarComputers
     public partial class ProductInfoForm : Form
     {
         public StartForm previousForm;
+
+        //creating an instance of the product database
         ProductContext productDB = new ProductContext();
 
         public SelectForm PreviousForm;
@@ -23,6 +33,7 @@ namespace DollarComputers
             InitializeComponent();
         }
 
+        //nect button will take us to order form
         private void NextButton_Click(object sender, EventArgs e)
         {
             OrderForm orderForm = new OrderForm();
@@ -31,12 +42,15 @@ namespace DollarComputers
             this.Hide();
         }
 
+        
         private void ProductInfoForm_Load(object sender, EventArgs e)
         {
+            //quering database on loading product form
             var selectedProduct = (from product in productDB.products
                                        where product.productID == Property.productID
                                        select product).FirstOrDefault();
 
+            //showing values to the user 
             ProductIdTextBox.Text = selectedProduct.productID.ToString();
             ConditionTextBox.Text = selectedProduct.condition;
             CostTextBox.Text = "$"+selectedProduct.cost.ToString();
@@ -44,12 +58,14 @@ namespace DollarComputers
 
             List<String> productInfoList = new List<string>();
 
+            //adding value to list
             productInfoList.Add(selectedProduct.model);
             productInfoList.Add(selectedProduct.OS);
             productInfoList.Add(selectedProduct.manufacturer);
             productInfoList.Add(selectedProduct.platform);
 
             int count = 0; 
+            //will show user remaining values
             foreach(var textBox in ProductInfoGroupBox.Controls.OfType<TextBox>()) {
                 textBox.Text = productInfoList[count];
                 count++;
@@ -58,6 +74,7 @@ namespace DollarComputers
 
             List<String> techSpecs = new List<string>();
 
+            //adding techspecs values
             techSpecs.Add(selectedProduct.webcam);
             techSpecs.Add(selectedProduct.GPU_Type);
             techSpecs.Add(selectedProduct.HDD_size);
@@ -75,6 +92,7 @@ namespace DollarComputers
             }
 
 
+            //storing all the values of the selected product in property class so that we can access it on next page
             Property.productID = selectedProduct.productID;
             Property.condition = selectedProduct.condition;
             Property.cost = selectedProduct.cost;
