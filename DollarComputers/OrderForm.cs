@@ -91,7 +91,10 @@ namespace DollarComputers
 
         private void FinishButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Thank you for choosing Dollar Computers", " ", MessageBoxButtons.OK, MessageBoxIcon.None);
+            if(MessageBox.Show("Thank you for choosing Dollar Computers", " ", MessageBoxButtons.OK, MessageBoxIcon.None) == DialogResult.OK)
+            {
+                this.Close();
+            }
         }
 
         private void CancelButton_Click(object sender, EventArgs e)
